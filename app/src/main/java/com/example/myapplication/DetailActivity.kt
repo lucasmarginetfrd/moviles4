@@ -18,9 +18,15 @@ class DetailActivity : AppCompatActivity() {
         edadET = findViewById(R.id.editTextAge)
 
         val bundle = intent.extras
-        nombreET.text = bundle?.getString("name")
-        apellidoET.text = bundle?.getString("lastName")
-        edadET.text = bundle?.getString("age")
+
+        val nombre = bundle?.getString("name")
+        val apellido = bundle?.getString("lastName")
+        val edad = bundle?.getString("age")
+
+        val user = User(nombre.toString(), apellido.toString(), edad.toString())
+        nombreET.text = user.name
+        apellidoET.text = user.lastName
+        edadET.text = user.age
 
     }
 }

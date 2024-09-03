@@ -28,6 +28,6 @@ class DetailActivity : AppCompatActivity() {
         apellidoET.text = user.lastName
         edadET.text = user.age
 
-        println(user.imprimirNombre())
+        user.imprimirNombre()
     }
 }

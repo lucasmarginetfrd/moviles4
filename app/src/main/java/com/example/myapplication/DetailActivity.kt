@@ -19,14 +19,15 @@ class DetailActivity : AppCompatActivity() {
 
         val bundle = intent.extras
 
-        val nombre = bundle?.getString("name")
+        val nombre = bundle?.getString("name")?: ""
         val apellido = bundle?.getString("lastName")
-        val edad = bundle?.getString("age")
+        val edad = bundle?.let { it.getString("") } ?: ""
 
-        val user = User(nombre.toString(), apellido.toString(), edad.toString())
+        val user = User(nombre, apellido, edad)
         nombreET.text = user.name
         apellidoET.text = user.lastName
         edadET.text = user.age
 
+        println(user.imprimirNombre())
     }
 }
